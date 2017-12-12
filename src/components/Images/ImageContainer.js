@@ -12,7 +12,7 @@ class ImageContainer extends React.Component{
       return(
         <div className="ImageContainer">
           <h2>Search results for {this.props.term}</h2>
-          <ImageList images={this.props.imageList}/>
+          <ImageList images={this.props.imageList} comments={this.props.comments}/>
         </div>
       )
     } else {
@@ -32,7 +32,7 @@ function mapStateToProps(state){
     imageList: state.images.imageList,
     term: state.images.term,
     backgroundHash: state.images.backgroundHash,
-    filteredList: state.images.filteredList
+    comments: state.comments.commentList
   }
 }
 export default connect(mapStateToProps)(ImageContainer)

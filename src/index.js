@@ -4,8 +4,8 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import imgurReducer from './reducers/imgur'
-import commentReducer from './reducers/comment'
+import imgurReducer from './reducers/imgurReducer'
+import commentReducer from './reducers/commentReducer'
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';

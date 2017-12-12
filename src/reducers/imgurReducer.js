@@ -7,8 +7,6 @@ function imgurReducer(state = {imageList: [], filteredList: [], term: null, filt
     case "SET_TERM":
       return Object.assign({}, state, {term: action.payload})
     case "FILTER_IMAGES":
-      console.log(action.imagePayload)
-      debugger
       return Object.assign({}, state, {
         imageList: action.imagePayload.filter(image => image.nsfw === !!action.filterPayload)
       })

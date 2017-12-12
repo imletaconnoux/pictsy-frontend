@@ -1,4 +1,6 @@
 import React from 'react'
+import CommentForm from './CommentForm'
+import CommentList from './CommentList'
 
 class ImageItem extends React.Component{
 
@@ -9,6 +11,8 @@ class ImageItem extends React.Component{
         <div className="Image-wrapper">
           <img aligned="center" width="560" height="315" src={link} alt={this.props.image}/>
           <p> {this.props.image.title} </p>
+          <CommentList comments={this.props.comments}/>
+          <CommentForm image={this.props.image.id}/>
       </div>
       )
     } else if (this.props.image.link) {
@@ -16,6 +20,8 @@ class ImageItem extends React.Component{
         <div className="Image-wrapper">
           <img aligned="center" width="560" height="315" src={this.props.image.link} alt={this.props.image}/>
           <p> {this.props.image.title} </p>
+          <CommentList comments={this.props.comments}/>
+          <CommentForm image={this.props.image.id}/>
       </div>
       )
     }
