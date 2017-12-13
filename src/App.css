@@ -108,7 +108,8 @@ img {
   position: relative;
   top: 120px;
   overflow: hidden;
-
+  background: #f2f2f2;
+  /*border: 1px;*/
 
 }
 
@@ -122,6 +123,7 @@ img {
   overflow: scroll;
   justify-content: center;
   align-items: center;
+  vertical-align: center;
 }
 
 .Modal-image img{
@@ -131,7 +133,7 @@ img {
 }
 .Modal-content {
   width: 280px;
-  min-height: 100px;
+  max-height: 600px;
   float: right;
   text-align: left;
   overflow: scroll;
@@ -142,6 +144,7 @@ img {
   bottom: 0;
   padding-bottom: 23px;
   width: 270px;
+  padding-top: 15px;
 }
 
 .Comment-form input{

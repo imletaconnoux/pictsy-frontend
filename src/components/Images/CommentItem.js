@@ -6,7 +6,9 @@ class CommentItem extends React.Component{
     console.log(this.props.comment)
     return(
       <div>
+        <li>
         {this.props.comment.text}
+        </li>
       </div>
     )
   }

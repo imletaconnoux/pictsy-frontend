@@ -11,7 +11,9 @@ const CommentList = (props) => {
 
   return (
     <div>
+      <ul>
       {commentItems}
+      </ul>
     </div>
   )
 
