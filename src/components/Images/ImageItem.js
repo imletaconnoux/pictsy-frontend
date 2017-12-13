@@ -1,7 +1,7 @@
-import React from 'react'
-import CommentForm from './CommentForm'
-import CommentList from './CommentList'
-import Modal from 'react-responsive-modal'
+import React from 'react';
+import CommentForm from './CommentForm';
+import CommentList from './CommentList';
+import Modal from 'react-modal';
 import '../../App.css'
 
 class ImageItem extends React.Component{
@@ -34,15 +34,28 @@ class ImageItem extends React.Component{
           <div className="Image-container">
             <img aligned="center" src={link} alt={this.props.image} onClick={this.openModal}/>
           </div>
-          <Modal open={this.state.open} onClose={this.closeModal}>
-            <p>Image Title: {this.props.image.title} </p>
-            <div className="Modal-container">
-              <img aligned="center" src={link} alt={this.props.image} onClick={this.openModal}/>
-              <CommentList comments={this.props.comments}/>
-              <CommentForm image={this.props.image.id}/>
-            </div>
+          <div className="Modal-wrapper">
+          <Modal isOpen={this.state.open} onRequestClose={this.closeModal}
+              className={{
+                  base: 'myClass',
+                  afterOpen: 'Image-modal',
+                  beforeClose: 'myClass_before-close'
+              }}>
+
+
+              <div className="Modal-image">
+                <img aligned="center" src={link} alt={this.props.image}/>
+              </div>
+              <div className="Modal-content">
+                <p>{this.props.image.title} </p>
+                <hr/>
+                <CommentList comments={this.props.comments}/>
+                <CommentForm image={this.props.image.id}/>
+              </div>
+
           </Modal>
-      </div>
+          </div>
+        </div>
 
       )
 

@@ -26,10 +26,10 @@ class CommentForm extends React.Component{
 
   render(){
     return(
-        <div>
+        <div className="Comment-form">
+          <hr/>
           <form className="Commentform-wrapper" onSubmit={this.handleSubmit}>
-            <input type="textarea" value={this.state.textInput} placeholder="Comment on this photo" onChange={this.handleInputChange}/>
-            <button>Save comment</button>
+            <input type="textarea" value={this.state.textInput} placeholder="Comment on this photo..." onChange={this.handleInputChange}/>
           </form>
         </div>
     )

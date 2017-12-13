@@ -6,6 +6,15 @@ function searchedImages(images){
   }
 }
 
+
+function filterImages(images, filter){
+  return{
+    type: "FILTER_IMAGES",
+    imagePayload: images,
+    filterPayload: filter
+  }
+}
+
 function setBackground(backgroundLink){
   return{
     type: "SET_BACKGROUND",
@@ -20,13 +29,7 @@ function setTerm(term){
   }
 }
 
-function filterImages(images, filter){
-  return{
-    type: "FILTER_IMAGES",
-    imagePayload: images,
-    filterPayload: filter
-  }
-}
+
 export function searchImages(term, filter){
   return function(dispatch){
     fetch(`https://api.imgur.com/3/gallery/t/${term}`, {
@@ -37,10 +40,12 @@ export function searchImages(term, filter){
     })
     .then((res) => res.json())
     .then((json) =>{
+
       const link = `https://i.imgur.com/${json.data.background_hash}.jpg`
 
-      console.log(json.data.items)
+
       if (filter !== "") {
+        debugger
         dispatch(filterImages(json.data.items, filter))
       } else {
         dispatch(searchedImages(json.data.items))
@@ -51,7 +56,6 @@ export function searchImages(term, filter){
     })
   }
 }
-
 
 
 // export function searchImages2(term){
