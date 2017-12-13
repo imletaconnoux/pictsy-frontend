@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import ImageList from './ImageList'
 import SearchBar from '../SearchBar'
+import '../../App.css'
 
 class ImageContainer extends React.Component{
 
@@ -10,9 +11,11 @@ class ImageContainer extends React.Component{
 
     if (this.props.imageList.length > 0){
       return(
-        <div className="ImageContainer">
+        <div>
           <h2>Search results for {this.props.term}</h2>
-          <ImageList images={this.props.imageList} comments={this.props.comments}/>
+
+            <ImageList images={this.props.imageList} comments={this.props.comments}/>
+
         </div>
       )
     } else {

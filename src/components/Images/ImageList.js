@@ -1,5 +1,6 @@
 import React from 'react'
 import ImageItem from './ImageItem'
+import '../../App.css'
 
 const ImageList = (props) => {
   const imageItems = props.images.map((image, index) =>{
@@ -8,10 +9,10 @@ const ImageList = (props) => {
   })
 
   return (
-    <div>
-      <ol>
+    <div className="wrapper">
+
       {imageItems}
-      </ol>
+
     </div>
   )
 

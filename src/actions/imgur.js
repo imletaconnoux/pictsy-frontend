@@ -38,17 +38,16 @@ export function searchImages(term, filter){
     .then((res) => res.json())
     .then((json) =>{
       const link = `https://i.imgur.com/${json.data.background_hash}.jpg`
-      console.log(filter)
 
+      console.log(json.data.items)
       if (filter !== "") {
         dispatch(filterImages(json.data.items, filter))
-        dispatch(setBackground(link))
-        dispatch(setTerm(json.data.name))
       } else {
         dispatch(searchedImages(json.data.items))
-        dispatch(setBackground(link))
-        dispatch(setTerm(json.data.name))
+
       }
+      dispatch(setBackground(link))
+      dispatch(setTerm(json.data.name))
     })
   }
 }
