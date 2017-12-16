@@ -13,8 +13,9 @@ class ImageContainer extends React.Component{
       return(
         <div>
           <h2>Search results for {this.props.term}</h2>
-
+            <div className="Search-results">
             <ImageList images={this.props.imageList} comments={this.props.comments}/>
+            </div>
 
         </div>
       )
