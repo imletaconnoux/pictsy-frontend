@@ -57,6 +57,11 @@ export function searchImages(term, filter){
   }
 }
 
+export function clearImages(){
+  return{
+    type: "CLEAR_IMAGES"
+  }
+}
 
 // export function searchImages2(term){
 //   return function(dispatch){

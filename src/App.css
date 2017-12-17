@@ -20,9 +20,26 @@
   float: left;
 }
 
+.Nav-search {
+  float: right;
+  padding-right: 30px;
+}
+
 * not(.Image){
   box-sizing: border-box;
 }
+
+.Filter-results{
+  padding-left: 130px;
+  padding-bottom: 10px;
+}
+#filter-dropdown {
+  float: left;
+}
+#clear-button{
+  float: left;
+}
+
 
 img {
   width: auto;
@@ -117,7 +134,10 @@ img {
     .Search-results{
       padding-left: 75px;
       padding-right: 75px;
+    }
 
+    .Filter-results{
+      padding-left: 85px;
     }
 }
 
@@ -154,6 +174,10 @@ img {
     padding-right: 55px;
 
 
+  }
+
+  .Filter-results{
+    padding-left: 65px;
   }
 }
 
