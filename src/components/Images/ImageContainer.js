@@ -3,23 +3,66 @@ import { connect } from 'react-redux'
 import ImageList from './ImageList'
 import SearchBar from '../SearchBar'
 import { clearImages } from '../../actions/imgur'
+import Sort from './Sort'
 import '../../App.css'
 
 class ImageContainer extends React.Component{
 
+  constructor(){
+    super()
+    this.state = {
+      sortedImages: ""
+    }
+  }
+
+
   handleClear = (event) => {
     this.props.clearImages()
+    this.setState({
+      sortedImages: ""
+    })
   }
-  render(){
-    console.log("Image list", this.props.imageList)
 
-    if (this.props.imageList.length > 0){
+  handleSort = (array) => {
+
+    this.setState({
+      sortedImages: array
+    })
+  }
+
+
+  render(){
+
+
+    console.log(this.props)
+    if (this.state.sortedImages !== "") {
       return(
         <div>
+          <div className="Results-title">
+            <div className="Result-sentence"> <h2>Search results for <em>{this.props.term}</em> sorted by: </h2>  </div>
+            <Sort images={this.props.imageList} clearSort={this.clearSort} handleSort={this.handleSort}/>
 
-          <h2>Search results for <em>{this.props.term}</em></h2>
-          <div className="Filter-results">
-            <button id="filter-dropdown">Filter Dropdown</button>
+          </div>
+          <div className="Sort-results">
+            <button onClick={this.handleClear} id="clear-button">Clear search</button>
+
+          </div>
+
+            <div className="Search-results">
+            <ImageList images={this.state.sortedImages} comments={this.props.comments}/>
+            </div>
+
+        </div>
+      )
+    } else if (this.props.imageList.length > 0){
+      return(
+        <div>
+          <div className="Results-title">
+            <div className="Result-sentence"> <h2>Search results for <em>{this.props.term}</em> sorted by: </h2> </div>
+            <Sort images={this.props.imageList} handleSort={this.handleSort} clearSort={this.clearSort}/>
+          </div>
+          <div className="Sort-results">
+
             <button onClick={this.handleClear} id="clear-button">Clear search</button>
           </div>
 

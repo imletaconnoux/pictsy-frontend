@@ -1,14 +1,21 @@
 function imgurReducer(state = {imageList: [], filteredList: [], term: null, filter: null, backgroundHash: null}, action){
-  switch (action.type){
+    let images
+    switch (action.type){
     case "SEARCHED_IMAGES":
-      return Object.assign({}, state, {imageList: action.payload})
+      images = action.payload.sort(function(a, b) {
+        return b.ups - a.ups
+      })
+      return Object.assign({}, state, {imageList: images})
     case "SET_BACKGROUND":
       return Object.assign({}, state, {backgroundHash: action.payload})
     case "SET_TERM":
       return Object.assign({}, state, {term: action.payload})
     case "FILTER_IMAGES":
+      images = action.imagePayload.sort(function(a, b){
+      return b.ups - a.ups
+    })
       return Object.assign({}, state, {
-        imageList: action.imagePayload.filter(image => image.nsfw === !!action.filterPayload)
+        imageList: images.filter(image => image.nsfw === !!action.filterPayload)
       })
     case "CLEAR_IMAGES":
         return Object.assign({}, state, {imageList: []})

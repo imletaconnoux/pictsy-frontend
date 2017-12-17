@@ -29,15 +29,30 @@
   box-sizing: border-box;
 }
 
-.Filter-results{
+.Sort-results{
   padding-left: 130px;
   padding-bottom: 10px;
+  display: block;
+  justify-content: left;
 }
-#filter-dropdown {
-  float: left;
-}
+
 #clear-button{
   float: left;
+}
+
+.Results-title {
+  display: inline;
+  justify-content: center;
+}
+
+.Result-sentence{
+  display: inline-block;
+}
+
+.Sort-dropdown {
+  display: inline-block;
+  margin: 5px;
+  height: 20px;
 }
 
 

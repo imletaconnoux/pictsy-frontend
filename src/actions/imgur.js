@@ -43,6 +43,7 @@ export function searchImages(term, filter){
 
       const link = `https://i.imgur.com/${json.data.background_hash}.jpg`
 
+      console.log(json)
 
       if (filter !== "") {
         debugger
