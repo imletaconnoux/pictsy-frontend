@@ -20,9 +20,9 @@
   float: left;
 }
 
-.App-intro {
+/*.App-intro {
   font-size: large;
-}
+}*/
 
 * not(.Image){
   box-sizing: border-box;
@@ -112,6 +112,14 @@ img {
     .Comment-form{
       max-width: 175px;
     }
+
+    .Comment-list {
+      position: absolute;
+      height: 380px;
+      width: 270px;
+      overflow: scroll;
+
+    }
 }
 
 @media (max-width: 600px) {
@@ -129,11 +137,19 @@ img {
   }
   .Modal-content {
     max-width: 170px;
-    max-height: 400px;
+    max-height: 300px;
     overflow: scroll;
   }
   .Comment-form{
     max-width: 155px;
+  }
+
+  .Comment-list {
+    position: absolute;
+    max-height: 280px;
+    width: 170px;
+    overflow: scroll;
+
   }
 
   .Search-results{
@@ -162,8 +178,8 @@ img {
   padding: 10px;
   margin: auto;
   position: relative;
-  top: 120px;
-  overflow: hidden;
+  top: 50px;
+  overflow: scroll;
   background: #f2f2f2;
   /*border: 1px;*/
 
@@ -193,7 +209,6 @@ img {
   max-height: 600px;
   float: right;
   text-align: left;
-  overflow: scroll;
 }
 
 .Comment-form{
@@ -202,6 +217,14 @@ img {
   padding-bottom: 23px;
   width: 270px;
   padding-top: 15px;
+}
+
+.Comment-list {
+  position: absolute;
+  height: 450px;
+  width: 270px;
+  overflow: scroll;
+
 }
 
 .Comment-form input{
