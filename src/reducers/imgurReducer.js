@@ -6,8 +6,6 @@ function imgurReducer(state = {imageList: [], filteredList: [], term: null, filt
         return b.ups - a.ups
       })
       return Object.assign({}, state, {imageList: images})
-    case "SET_BACKGROUND":
-      return Object.assign({}, state, {backgroundHash: action.payload})
     case "SET_TERM":
       return Object.assign({}, state, {term: action.payload})
     case "FILTER_IMAGES":

@@ -15,12 +15,7 @@ function filterImages(images, filter){
   }
 }
 
-function setBackground(backgroundLink){
-  return{
-    type: "SET_BACKGROUND",
-    payload: backgroundLink
-  }
-}
+
 
 function setTerm(term){
   return{
@@ -52,7 +47,7 @@ export function searchImages(term, filter){
         dispatch(searchedImages(json.data.items))
 
       }
-      dispatch(setBackground(link))
+
       dispatch(setTerm(json.data.name))
     })
   }

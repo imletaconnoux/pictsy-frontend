@@ -61,7 +61,7 @@ class ImageContainer extends React.Component{
             <div className="Result-sentence"> <h2>Search results for <em>{this.props.term}</em> sorted by: </h2> </div>
             <Sort images={this.props.imageList} handleSort={this.handleSort} clearSort={this.clearSort}/>
           </div>
-          <div className="Sort-results">
+          <div className="Clear">
 
             <button onClick={this.handleClear} id="clear-button">Clear search</button>
           </div>
