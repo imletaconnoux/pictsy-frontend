@@ -1,12 +1,14 @@
 .App {
   text-align: center;
+  overflow: scroll;
 }
 
 .App-header {
   background-color: #ffffff;
   height: 20px;
   padding: 20px;
-  width: 100%
+  width: 100%;
+  margin: 0px;
 }
 
 .Nav-items {
@@ -23,6 +25,31 @@
 .Nav-search {
   float: right;
   padding-right: 30px;
+
+}
+
+.Landing-image {
+
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://i.ytimg.com/vi/fZwBjlMdAY0/maxresdefault.jpg') no-repeat center fixed;
+  background-size: cover;
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+
+
+}
+
+.Landing-content{
+  max-width: 500px;
+  margin: auto;
+  padding: 150px ;
+  float: center;
+  /*position: fixed;*/
+  color: white;
+
+}
+.Search-item{
+  margin: 2px;
 }
 
 * not(.Image){
@@ -85,19 +112,29 @@ img {
 
 .Image-container {
   width: 280px;
-  height: 280px;
+  height: 330px;
   display: grid;
   align-items: center;
   justify-content: center;
   background-color: white;
 }
 
-.Image-container img{
-  margin: 0;
-  display: block;
-
+.Image-preview{
+  height: 280px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 
 }
+.Image-container img{
+  float: top;
+  margin: 0;
+  display: block;
+  max-height: 280px;
+}
+
+
+
 .row:after {
     content: "";
     display: table;
@@ -114,6 +151,10 @@ img {
 
 
 @media (max-width: 1200px) {
+
+
+
+
     .wrapper {
       grid-template-columns: repeat(3, auto);
     }
@@ -142,7 +183,7 @@ img {
     }
 
     .Comment-list {
-      height: 380px;
+      max-height: 400px;
       width: 270px;
     }
 
@@ -153,6 +194,10 @@ img {
 
     .Filter-results{
       padding-left: 85px;
+    }
+
+    .Modal-data{
+      height: 90px;
     }
 }
 
@@ -179,7 +224,7 @@ img {
   }
 
   .Comment-list {
-    max-height: 280px;
+    max-height: 240px;
     width: 170px;
 
   }
@@ -194,8 +239,13 @@ img {
   .Filter-results{
     padding-left: 65px;
   }
-}
 
+  .Modal-data{
+    max-height: 80px;
+  }
+
+
+}
 
 
 
@@ -219,6 +269,8 @@ img {
   /*border: 1px;*/
 
 }
+
+
 
 .Modal-image {
   box-sizing: content-box;
@@ -244,6 +296,12 @@ img {
   max-height: 600px;
   float: right;
   text-align: left;
+  overflow: scroll;
+}
+
+.Modal-data{
+  border-bottom: 1px solid black;
+  height: 60px;
 }
 
 .Comment-form{
@@ -254,9 +312,26 @@ img {
   padding-top: 15px;
 }
 
+.Image-title{
+  line-height: 85%
+}
+
+.Image-data1 {
+  line-height: 10%;
+  float: left;
+  font-size: 65%;
+
+}
+
+.Image-data2 {
+  line-height: 10%;
+  float: right;
+  font-size: 65%;
+}
+
 .Comment-list {
   position: absolute;
-  height: 450px;
+  height: 445px;
   width: 270px;
   overflow: scroll;
 

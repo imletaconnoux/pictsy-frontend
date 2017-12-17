@@ -44,13 +44,13 @@ class SearchBar extends React.Component{
   render(){
     return(
       <form className="Searchbar-wrapper" onSubmit={this.handleSearch}>
-        <input type="text" value={this.state.searchInput} onChange={this.handleInputChange} placeholder="Search for images"/>
-        <select onChange={this.handleFilterInput}>
+        <input className="Search-item" type="text" value={this.state.searchInput} onChange={this.handleInputChange} placeholder="Search for images"/>
+        <select className="Search-item"  onChange={this.handleFilterInput}>
           <option value="">Show me everything</option>
           <option value="false">I am at work! </option>
           <option value="true">NSFW only</option>
         </select>
-        <button>Search</button>
+        <button className="Search-item" >Search</button>
       </form>
     )
   }

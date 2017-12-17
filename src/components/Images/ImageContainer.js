@@ -74,10 +74,12 @@ class ImageContainer extends React.Component{
       )
     } else {
       return (
-        <div>
+        <div className="Landing-image">
+          <div className="Landing-content">
           <h1>Welcome to Pictsy!</h1>
           <h2>Get started by entering a keyword.</h2>
           <SearchBar/>
+          </div>
         </div>
       )
     }

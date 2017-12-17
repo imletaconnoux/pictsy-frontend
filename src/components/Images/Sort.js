@@ -58,7 +58,7 @@ class Sort extends React.Component{
           <select onChange={this.handleSortInput}>
             <option value="popular">popularity</option>
             <option value="views">number of views</option>
-            <option value="new">newest first</option>
+            <option value="newest">newest first</option>
           </select>
 
       </div>

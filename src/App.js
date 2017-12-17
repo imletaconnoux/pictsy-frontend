@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
           <Nav/>
-            <ImageContainer />
+          <ImageContainer />
       </div>
     );
   }
