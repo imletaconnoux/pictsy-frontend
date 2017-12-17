@@ -20,10 +20,6 @@
   float: left;
 }
 
-/*.App-intro {
-  font-size: large;
-}*/
-
 * not(.Image){
   box-sizing: border-box;
 }
@@ -114,10 +110,13 @@ img {
     }
 
     .Comment-list {
-      position: absolute;
       height: 380px;
       width: 270px;
-      overflow: scroll;
+    }
+
+    .Search-results{
+      padding-left: 75px;
+      padding-right: 75px;
 
     }
 }
@@ -145,18 +144,15 @@ img {
   }
 
   .Comment-list {
-    position: absolute;
     max-height: 280px;
     width: 170px;
-    overflow: scroll;
 
   }
 
   .Search-results{
     padding-left: 55px;
     padding-right: 55px;
-    padding-top: 20px;
-    justify-content: center
+
 
   }
 }
