@@ -96,21 +96,21 @@ img {
       grid-template-columns: repeat(2, auto);
     }
     .Image-modal{
-      max-height: 500px;
-      max-width: 600px;
+      max-height: 400px;
+      max-width: 650px;
       overflow: scroll;
     }
     .Modal-image{
-      max-width: 300px;
-      max-height: 250px;
+      max-width: 450px;
+      max-height: 400px;
     }
     .Modal-content {
-      max-width: 140px;
-      max-height: 580px;
+      max-width: 190px;
+      max-height: 400px;
       overflow: scroll;
     }
     .Comment-form{
-      max-width: 135px;
+      max-width: 175px;
     }
 }
 
