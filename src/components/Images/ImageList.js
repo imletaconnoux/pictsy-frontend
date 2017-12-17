@@ -11,7 +11,9 @@ const ImageList = (props) => {
   return (
     <div className="wrapper">
 
+
       {imageItems}
+
 
     </div>
   )

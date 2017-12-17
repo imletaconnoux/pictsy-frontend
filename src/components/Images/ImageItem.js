@@ -29,7 +29,7 @@ class ImageItem extends React.Component{
       link = this.props.image.link
     }
     return(
-
+      
         <div className="column">
           <div className="Image-container">
             <img aligned="center" src={link} alt={this.props.image} onClick={this.openModal}/>
