@@ -135,6 +135,14 @@ img {
   .Comment-form{
     max-width: 155px;
   }
+
+  .Search-results{
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 20px;
+    justify-content: center
+
+  }
 }
 
 
