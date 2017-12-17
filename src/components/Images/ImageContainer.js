@@ -43,7 +43,7 @@ class ImageContainer extends React.Component{
             <Sort images={this.props.imageList} clearSort={this.clearSort} handleSort={this.handleSort}/>
 
           </div>
-          <div className="Sort-results">
+          <div className="Clear">
             <button onClick={this.handleClear} id="clear-button">Clear search</button>
 
           </div>

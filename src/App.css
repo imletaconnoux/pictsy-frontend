@@ -56,7 +56,6 @@
 .Clear{
   padding-left: 155px;
   padding-bottom: 10px;
-  display: block;
   justify-content: left;
 }
 
@@ -212,7 +211,6 @@ img {
   .Clear{
     padding-left: 95px
   }
-
   .Image-modal{
     max-height: 300px;
     max-width: 500px;
