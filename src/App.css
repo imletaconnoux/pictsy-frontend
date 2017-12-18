@@ -244,7 +244,7 @@ img {
     }
 
     .Comment-list {
-      max-height: 400px;
+      max-height: 280px;
       width: 270px;
     }
 
@@ -289,7 +289,7 @@ img {
   }
 
   .Comment-list {
-    max-height: 240px;
+    max-height: 150px;
     width: 170px;
 
   }
