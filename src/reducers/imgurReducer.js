@@ -28,7 +28,17 @@ function imgurReducer(state = {imageList: [], filteredList: [], term: null, past
 
     case "PAST_SEARCH":
 
+        let included = false
+        state.pastSearch.map((search) => {
+          if (search.term === action.payload.term){
+            included = true
+          }
+        })
+        if (included === false){
         return Object.assign({}, state, {pastSearch: [...state.pastSearch,  action.payload: {} ]})
+      } else {
+        return state
+      }
 
 
     default:
