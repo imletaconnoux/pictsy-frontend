@@ -21,6 +21,16 @@ class PastSearchItem extends React.Component {
     } else if (this.props.item.item.link) {
       link = this.props.item.item.link
     }
+
+    let filter
+
+    if (this.props.item.filter === null){
+      filter = "false"
+    } else if (this.props.item.filter === false){
+      filter = "I am at work!"
+    } else if (this.props.item.filter === true){
+      filter = "NSFW"
+    }
     return(
 
       <div className="column">
@@ -29,6 +39,7 @@ class PastSearchItem extends React.Component {
             <img aligned="center" src={link} alt={this.props.item.term} onClick={this.handleClick}/>
             <div className="Past-text">
                 <p>{this.props.item.term}</p>
+                <p>Filtered on: {filter}</p>
             </div>
           </div>
 

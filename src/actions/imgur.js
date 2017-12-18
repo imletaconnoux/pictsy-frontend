@@ -50,7 +50,7 @@ export function searchImages(term, filter){
       const link = `https://i.imgur.com/${json.data.background_hash}.jpg`
 
 
-     if (filter !== "") {
+     if (filter !== "" ) {
 
         dispatch(filterImages(json.data.items, filter))
         dispatch(pastSearch({term: json.data.name, item: json.data.items[0], filter: filter}))

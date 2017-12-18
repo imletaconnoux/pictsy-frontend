@@ -18,7 +18,6 @@ function imgurReducer(state = {imageList: [], filteredList: [], term: null, past
           imageList: filteredImages
         })
       } else {
-        debugger
         return Object.assign({}, state, {
           imageList: [{message: "No results returned. Adjust the filter setting or search term."}]
         })
@@ -30,7 +29,7 @@ function imgurReducer(state = {imageList: [], filteredList: [], term: null, past
 
         let included = false
         state.pastSearch.map((search) => {
-          if (search.term === action.payload.term){
+          if (search.term === action.payload.term && search.filter === action.payload.filter){
             included = true
           }
         })
