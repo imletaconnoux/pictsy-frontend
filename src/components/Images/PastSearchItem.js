@@ -14,7 +14,7 @@ class PastSearchItem extends React.Component {
   }
 
   render(){
-    console.log(this.props)
+
     let link
     if (this.props.item.item.cover) {
       link = `https://i.imgur.com/${this.props.item.item.cover}.jpg`
@@ -39,7 +39,7 @@ class PastSearchItem extends React.Component {
             <img aligned="center" src={link} alt={this.props.item.term} onClick={this.handleClick}/>
             <div className="Past-text">
                 <p>{this.props.item.term}</p>
-                <p>Filtered on: {filter}</p>
+                <p>Filter on: {filter}</p>
             </div>
           </div>
 
