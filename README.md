@@ -4,7 +4,7 @@ Pictsy is a React Redux photo browsing application that uses to the imgur API to
 
 <a href="https://www.youtube.com/watch?v=p2hChfVNOGc&feature=youtu.be
 " target="_blank"><img src="https://www.youtube.com/embed/p2hChfVNOGc" 
-alt="FoodBringer Demo Video" width="240" height="180" border="10" /></a>
+alt="Pictsy Demo Video" width="240" height="180" border="10" /></a>
 
 A user can click on the image to enlarge it, add comments and view more data. Comments on an image are not saved to the imgur API, nor are they posted to a back end database; they live solely in the Redux application state. Comments have their own reducer, however, so as long as the browsing is seamless the comments will be saved. The data ("ups" and "views") displayed on the image modal and used for sorting is pulled from the imgur API and is based on user history from their site. Recent searches are also saved, so that a user can easily access them again.
 
