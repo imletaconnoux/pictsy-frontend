@@ -1,4 +1,4 @@
-function imgurReducer(state = {imageList: [], filteredList: [], term: null, filter: null, backgroundHash: null}, action){
+function imgurReducer(state = {imageList: [], filteredList: [], term: null}, action){
     let images
     switch (action.type){
     case "SEARCHED_IMAGES":
