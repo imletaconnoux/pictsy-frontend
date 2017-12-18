@@ -45,6 +45,29 @@
   color: white;
 
 }
+
+.Error-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://image.freepik.com/free-photo/empty-photography-paper_1101-71.jpg') no-repeat center fixed;
+  background-color: white;
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.Error-content{
+  max-width: 500px;
+  margin: auto;
+  padding: 265px ;
+  float: center;
+  /*position: fixed;*/
+  color: white;
+
+}
+
+.Searchbar-wrapper:hover button{
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3);
+}
+
 .Search-item{
   margin: 2px;
 }
@@ -57,6 +80,10 @@
   padding-left: 155px;
   padding-bottom: 10px;
   justify-content: left;
+}
+
+.Clear:hover button{
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3);
 }
 
 #clear-button{

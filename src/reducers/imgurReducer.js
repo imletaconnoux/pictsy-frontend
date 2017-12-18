@@ -12,11 +12,20 @@ function imgurReducer(state = {imageList: [], filteredList: [], term: null, filt
       images = action.imagePayload.sort(function(a, b){
       return b.ups - a.ups
     })
-      return Object.assign({}, state, {
-        imageList: images.filter(image => image.nsfw === !!action.filterPayload)
-      })
+      let filteredImages = images.filter(image => image.nsfw === !!action.filterPayload)
+      if (filteredImages.length >=1){
+        return Object.assign({}, state, {
+          imageList: filteredImages
+        })
+      } else {
+        debugger
+        return Object.assign({}, state, {
+          imageList: [{message: "No results returned. Adjust the filter setting or search term."}]
+        })
+      }
     case "CLEAR_IMAGES":
         return Object.assign({}, state, {imageList: []})
+
     default:
       return state
   }

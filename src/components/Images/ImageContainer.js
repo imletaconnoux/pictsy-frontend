@@ -52,27 +52,41 @@ class ImageContainer extends React.Component{
             <ImageList images={this.state.sortedImages} comments={this.props.comments}/>
             </div>
 
+
         </div>
       )
-    } else if (this.props.imageList.length > 0){
+    } else if (this.props.imageList.length > 0 && !this.props.imageList[0].message){
       return(
         <div>
           <div className="Results-title">
             <div className="Result-sentence"> <h2>Search results for <em>{this.props.term}</em> sorted by: </h2> </div>
             <Sort images={this.props.imageList} handleSort={this.handleSort} clearSort={this.clearSort}/>
+
           </div>
           <div className="Clear">
-
             <button onClick={this.handleClear} id="clear-button">Clear search</button>
           </div>
 
-            <div className="Search-results">
+          <div className="Search-results">
             <ImageList images={this.props.imageList} comments={this.props.comments}/>
-            </div>
+          </div>
 
         </div>
       )
-    } else {
+    } else if (this.props.imageList.length > 0 && this.props.imageList[0].message) {
+      debugger
+      return (
+        <div className="Error-image">
+          <div className="Error-content">
+
+          <h2>{this.props.imageList[0].message}</h2>
+          <SearchBar/>
+          </div>
+        </div>
+      )
+    }
+
+     else {
       return (
         <div className="Landing-image">
           <div className="Landing-content">

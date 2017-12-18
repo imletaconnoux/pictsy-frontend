@@ -24,6 +24,11 @@ function setTerm(term){
   }
 }
 
+function noReturn(){
+  return{
+    type: "NO_RETURN"
+  }
+}
 
 export function searchImages(term, filter){
   return function(dispatch){
@@ -39,9 +44,8 @@ export function searchImages(term, filter){
       const link = `https://i.imgur.com/${json.data.background_hash}.jpg`
 
       console.log(json)
-
-      if (filter !== "") {
-        debugger
+     if (filter !== "") {
+      
         dispatch(filterImages(json.data.items, filter))
       } else {
         dispatch(searchedImages(json.data.items))

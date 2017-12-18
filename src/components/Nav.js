@@ -5,7 +5,7 @@ import '../App.css'
 
 class Nav extends React.Component{
   render(){
-    if (this.props.term) {
+    if (this.props.term && !this.props.imageList[0].message) {
       return(
          <div className="App-header">
             <ul className="Nav-items">
@@ -30,7 +30,8 @@ class Nav extends React.Component{
 
 function mapStateToProps(state){
   return{
-    term: state.images.term
+    term: state.images.term,
+    imageList: state.images.imageList
   }
 }
 
