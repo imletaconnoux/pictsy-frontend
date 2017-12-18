@@ -5,7 +5,7 @@ import '../App.css'
 
 class Nav extends React.Component{
   render(){
-    if (this.props.term && !this.props.imageList[0].message) {
+    if (this.props.term) {
       return(
          <div className="App-header">
             <ul className="Nav-items">
