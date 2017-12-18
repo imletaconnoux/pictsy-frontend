@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ImageList from './ImageList'
+import PastSearchList from './PastSearchList'
 import SearchBar from '../SearchBar'
 import { clearImages } from '../../actions/imgur'
 import Sort from './Sort'
@@ -34,7 +35,7 @@ class ImageContainer extends React.Component{
   render(){
 
 
-    console.log(this.props)
+    console.log(this.props.pastSearch)
     if (this.state.sortedImages !== "") {
       return(
         <div>
@@ -84,6 +85,19 @@ class ImageContainer extends React.Component{
           </div>
         </div>
       )
+    } else if (this.props.imageList.length < 1 && this.props.pastSearch.length > 0) {
+      return (
+        <div>
+          <div className="Results-title">
+            <div className="Result-sentence"> <h2><em>Your recent searches: </em></h2>  </div>
+
+
+          </div>
+          <div className="Search-results">
+          <PastSearchList items={this.props.pastSearch}/>
+          </div>
+        </div>
+      )
     }
 
      else {
@@ -105,7 +119,8 @@ function mapStateToProps(state){
     imageList: state.images.imageList,
     term: state.images.term,
     backgroundHash: state.images.backgroundHash,
-    comments: state.comments.commentList
+    comments: state.comments.commentList,
+    pastSearch: state.images.pastSearch
   }
 }
 

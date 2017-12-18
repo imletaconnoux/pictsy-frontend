@@ -30,6 +30,12 @@ function noReturn(){
   }
 }
 
+function pastSearch(searchObject){
+  return {
+    type: "PAST_SEARCH",
+    payload: searchObject
+  }
+}
 export function searchImages(term, filter){
   return function(dispatch){
     fetch(`https://api.imgur.com/3/gallery/t/${term}`, {
@@ -43,13 +49,14 @@ export function searchImages(term, filter){
 
       const link = `https://i.imgur.com/${json.data.background_hash}.jpg`
 
-      console.log(json)
+
      if (filter !== "") {
-      
+
         dispatch(filterImages(json.data.items, filter))
+        dispatch(pastSearch({term: json.data.name, item: json.data.items[0], filter: filter}))
       } else {
         dispatch(searchedImages(json.data.items))
-
+        dispatch(pastSearch({term: json.data.name, item: json.data.items[0], filter: null}))
       }
 
       dispatch(setTerm(json.data.name))
@@ -62,6 +69,8 @@ export function clearImages(){
     type: "CLEAR_IMAGES"
   }
 }
+
+
 
 // export function searchImages2(term){
 //   return function(dispatch){

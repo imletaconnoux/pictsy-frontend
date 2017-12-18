@@ -149,6 +149,38 @@ img {
   justify-content: center;
 
 }
+
+
+.Past-container {
+  width: 280px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.3);
+  background-color: white;
+
+
+}
+
+.Past-preview{
+  height: 280px;
+  display: inline;
+  flex-wrap: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.Past-text{
+  width: 100%;
+
+
+}
+
+
+
 .Image-container img{
   float: top;
   margin: 0;

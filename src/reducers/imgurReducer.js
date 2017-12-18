@@ -1,4 +1,4 @@
-function imgurReducer(state = {imageList: [], filteredList: [], term: null}, action){
+function imgurReducer(state = {imageList: [], filteredList: [], term: null, pastSearch: []}, action){
     let images
     switch (action.type){
     case "SEARCHED_IMAGES":
@@ -25,6 +25,11 @@ function imgurReducer(state = {imageList: [], filteredList: [], term: null}, act
       }
     case "CLEAR_IMAGES":
         return Object.assign({}, state, {imageList: []})
+
+    case "PAST_SEARCH":
+
+        return Object.assign({}, state, {pastSearch: [...state.pastSearch,  action.payload: {} ]})
+
 
     default:
       return state
